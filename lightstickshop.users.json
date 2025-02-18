@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "67b0acfd77c16e7ceb4d794b"
+  },
+  "name": "Rival",
+  "email": "rival@example.com",
+  "password": "hashedpassword",
+  "role": "user"
+},
+{
+  "_id": {
+    "$oid": "67b4629d93d542eb94d6120a"
+  },
+  "name": "Rival",
+  "email": "rivalmaulana990@gmail.com",
+  "password": "$2b$10$zIZriJtlvL1V8ZIoMGQCu.t/dzYIuv1bQuIlS63vyKJkMSHMkQnYS",
+  "role": "user",
+  "__v": 0
+}]
