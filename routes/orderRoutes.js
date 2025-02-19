@@ -1,8 +1,32 @@
 import express from 'express';
-import { createOrder } from '../controllers/orderController.js';
+import mongoose from 'mongoose';
+import orderRoutes from './routes/orderRoutes.js';
+import dotenv from 'dotenv';
 
-const router = express.Router();
+dotenv.config();
 
-router.post('/create', createOrder);
+const app = express();
+const PORT = process.env.PORT || 5000;
 
-export default router;
+// Middleware
+app.use(express.json());
+
+// Koneksi ke MongoDB Atlas
+const uri = process.env.MONGO_URI;
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log('Koneksi ke MongoDB Atlas berhasil!');
+})
+.catch((error) => {
+  console.error('Koneksi ke MongoDB Atlas gagal:', error);
+});
+
+// Menggunakan rute
+app.use('/api', orderRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server berjalan di http://localhost:${PORT}`);
+});
