@@ -53,8 +53,6 @@ app.get('/api', (req, res) => {
   res.json({ message: "Backend Lightstick Shop is running! 🚀" });
 });
 
-  res.json({ message: "Backend Lightstick Shop is running! 🚀" });
-
 // Endpoint untuk mendapatkan daftar produk
 app.get('/api/products', async (req, res) => {
   try {
