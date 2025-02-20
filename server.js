@@ -48,9 +48,12 @@ const Product = mongoose.model('Product', {
 });
 
 // API Root Check
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
+  res.send('API is running...');
   res.json({ message: "Backend Lightstick Shop is running! 🚀" });
 });
+
+  res.json({ message: "Backend Lightstick Shop is running! 🚀" });
 
 // Endpoint untuk mendapatkan daftar produk
 app.get('/api/products', async (req, res) => {
