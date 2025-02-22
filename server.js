@@ -76,7 +76,7 @@ app.get('/api/products/:id', async (req, res) => {
 });
 
 // Endpoint untuk menambahkan produk baru
-app.post('/api/products', async (req, res) => {
+app.post('/api/products/', async (req, res) => {
   try {
     const newProduct = new Product(req.body);
     await newProduct.save();
